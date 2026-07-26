@@ -4,10 +4,22 @@
 > *Official Epidemic Intelligence, Tele-ICU Command & AI Resource Redistribution Platform for District & National Health Administration.*
 
 ![ArogyaAI OS Banner](https://img.shields.io/badge/Platform-ArogyaAI%20OS%20v2.5-0284c7?style=for-the-badge&logo=heart)
+![Vercel](https://img.shields.io/badge/Deploy-Vercel%20Ready-000000?style=for-the-badge&logo=vercel)
 ![React](https://img.shields.io/badge/Frontend-React%2018%20%7C%20Vite%20%7C%20TypeScript-2563eb?style=for-the-badge&logo=react)
 ![TailwindCSS](https://img.shields.io/badge/Styling-Tailwind%20v4%20%7C%20Material%20Design-14b8a6?style=for-the-badge&logo=tailwindcss)
 ![FastAPI](https://img.shields.io/badge/Backend-FastAPI%20%7C%20Python%203.11-059669?style=for-the-badge&logo=fastapi)
 ![License](https://img.shields.io/badge/License-MIT-7c3aed?style=for-the-badge)
+
+---
+
+## 🚀 Single-Click Vercel Deployment
+
+ArogyaAI OS is pre-configured for instant **Vercel** deployment with zero manual configuration required.
+
+### Deploying via Vercel Dashboard
+1. Go to **[Vercel Dashboard](https://vercel.com/new)** and select **Import Repository**.
+2. Select your GitHub repository: `https://github.com/Yugp12/ArogyaAI.git`.
+3. Click **Deploy**! Vercel will automatically detect `vercel.json` and build the application cleanly.
 
 ---
 
@@ -57,13 +69,11 @@
 
 ```
 ArogyaAI/
+├── vercel.json           # Root Vercel Deployment Configuration
+├── package.json          # Root build scripts for Vercel
 ├── frontend/             # React + Vite + TypeScript Web Application
-│   ├── src/
-│   │   ├── components/   # Map, Export, Theme, Telemetry, Copilot, Modals
-│   │   ├── context/      # CommandContext & ThemeContext
-│   │   ├── pages/        # Overview, Forecasting, Redistribution, Workforce, Reports
-│   │   ├── data/         # Mock Outbreak & Telemetry Datasets
-│   │   └── types/        # TypeScript Interfaces & Schemas
+│   ├── src/              # Components, Pages, Context, Hooks, Data, Types
+│   ├── vercel.json       # Frontend fallback Vercel configuration
 │   ├── public/           # Favicon & Vector Icons
 │   ├── index.html        # Single Page Application Entrypoint
 │   ├── package.json      # Dependencies & Scripts
@@ -71,10 +81,7 @@ ArogyaAI/
 │   └── tsconfig.json     # Strict TypeScript Compiler Options
 │
 └── backend/              # Python FastAPI Telemetry API
-    ├── app/
-    │   ├── api/v1/       # REST Routes (AI, Hospitals, Reports, Auth, WebSockets)
-    │   ├── models/       # Pydantic Schemas & ORM Data Models
-    │   └── services/     # Hospital Telemetry & PDF Generation Engines
+    ├── app/              # REST Routes (AI, Hospitals, Reports, Auth, WebSockets)
     ├── tests/            # Automated Pytest Suite
     ├── Dockerfile        # Docker Container Deployment Manifest
     └── requirements.txt  # Python Dependencies
@@ -122,22 +129,6 @@ The Backend Swagger API Docs will run at: **`http://localhost:8000/api/v1/docs`*
 | **Director General / Admin** | `a.sengupta@mohfw.gov.in` | `admin123` |
 | **Tele-ICU Critical Care Doctor** | `doctor@arogya.gov.in` | `doctor123` |
 | **Ministry Health Secretary** | `officer.mohfw@nic.in` | `gov123` |
-
----
-
-## 🎨 Enterprise Design Specifications
-
-- **Primary Font**: `Inter` (Fallback: `Roboto`)
-- **Minimum Font Size**: `13px` (WCAG AA Compliant)
-- **Container Max Width**: `1400px` (`max-w-[1400px] mx-auto`)
-- **Card Corner Radius**: `18px` (`rounded-[18px]`)
-- **Card Padding**: `24px` (`p-6`)
-- **Primary Color Palette**:
-  - Primary Blue: `#2563EB`
-  - Healthcare Teal: `#14B8A6`
-  - Critical Red: `#EF4444`
-  - Warning Amber: `#F59E0B`
-  - Success Emerald: `#22C55E`
 
 ---
 
