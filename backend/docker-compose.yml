@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: arogya_api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://arogya_admin:secret_pass_2035@db:5432/arogya_db
+      - REDIS_URL=redis://redis:6379/0
+      - JWT_SECRET=arogya_ai_super_secret_jwt_key_2035_mohfw_whogrid
+      - ENVIRONMENT=production
+    depends_on:
+      - db
+      - redis
+    restart: always
+
+  db:
+    image: postgres:16-alpine
+    container_name: arogya_db
+    environment:
+      - POSTGRES_USER=arogya_admin
+      - POSTGRES_PASSWORD=secret_pass_2035
+      - POSTGRES_DB=arogya_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  redis:
+    image: redis:7-alpine
+    container_name: arogya_redis
+    ports:
+      - "6379:6379"
+    restart: always
+
+volumes:
+  postgres_data:
