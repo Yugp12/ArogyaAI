@@ -2,8 +2,8 @@ import React, { createContext, useContext, useState } from 'react';
 import type { PatientTriage, OutbreakData } from '../types';
 import { mockPatients, mockOutbreaks } from '../data/mockData';
 
-export type NavTab = 'overview' | 'intelligence' | 'digitaltwin' | 'redistribution' | 'forecasting' | 'patients' | 'outbreaks' | 'triage' | 'logistics' | 'inventory' | 'workforce' | 'analytics' | 'copilot' | 'genomics' | 'nodes' | 'settings';
-export type ModalType = null | 'copilot' | 'protocol' | 'report' | 'scan' | 'biometric' | 'barcode' | 'newPatient' | 'whatif' | 'reportDetail';
+export type NavTab = 'overview' | 'intelligence' | 'digitaltwin' | 'redistribution' | 'forecasting' | 'patients' | 'triage' | 'logistics' | 'inventory' | 'workforce' | 'analytics' | 'genomics' | 'nodes' | 'settings';
+export type ModalType = null | 'protocol' | 'report' | 'scan' | 'biometric' | 'barcode' | 'newPatient' | 'whatif' | 'reportDetail';
 
 interface CommandContextType {
   isAuthenticated: boolean;

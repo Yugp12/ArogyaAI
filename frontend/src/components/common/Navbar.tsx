@@ -1,10 +1,7 @@
 import React from 'react';
 import { useCommand } from '../../context/CommandContext';
-import { RippleButton } from './RippleButton';
 import { AICoreSphere } from '../theme/AICoreSphere';
 import {
-  ShieldAlert,
-  Sparkles,
   FileText,
   Activity,
   Search,
@@ -14,7 +11,6 @@ import {
 export const Navbar: React.FC = () => {
   const {
     setActiveModal,
-    emergencyLockdown,
     notifications,
     logout
   } = useCommand();
@@ -68,37 +64,12 @@ export const Navbar: React.FC = () => {
             />
           </div>
 
-          <RippleButton
-            variant="primary"
-            size="sm"
-            onClick={() => setActiveModal('copilot')}
-            className="glow-teal"
-          >
-            <Sparkles className="w-4 h-4 text-teal-200 animate-spin-slow" />
-            <span className="hidden md:inline">ArogyaAI Copilot</span>
-          </RippleButton>
-
           <button
             onClick={() => setActiveModal('report')}
             className="p-2 text-slate-400 hover:text-slate-200 light:hover:text-slate-800 rounded-xl border border-slate-800 light:border-slate-200 bg-slate-900/60 light:bg-slate-100 hover:bg-slate-800 transition-all cursor-pointer"
             title="Generate National Briefing PDF Report"
           >
             <FileText className="w-4 h-4" />
-          </button>
-
-          <button
-            onClick={() => setActiveModal('protocol')}
-            className={`p-2 rounded-xl border transition-all flex items-center gap-1.5 text-xs font-bold cursor-pointer ${
-              emergencyLockdown
-                ? 'bg-rose-600 text-white border-rose-500 animate-pulse'
-                : 'bg-rose-500/10 text-rose-400 border-rose-500/30 hover:bg-rose-500/20'
-            }`}
-            title="Emergency Containment Protocol Trigger"
-          >
-            <ShieldAlert className="w-4 h-4" />
-            <span className="hidden xl:inline">
-              {emergencyLockdown ? 'CONTAINMENT ACTIVE' : 'EMERGENCY PROTOCOL'}
-            </span>
           </button>
 
           {/* Floating Spherical AI Core Theme Engine */}

@@ -107,14 +107,6 @@ export const OverviewPage: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setActiveModal('copilot')}
-            className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-teal-500 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-teal-500/25 transition-all cursor-pointer glow-teal font-mono"
-          >
-            <Sparkles className="w-4 h-4 text-teal-200" />
-            <span>Launch Copilot</span>
-          </button>
-
-          <button
             onClick={() => setActiveModal('report')}
             className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 light:bg-slate-100 light:text-slate-800 font-semibold text-xs border border-slate-700 light:border-slate-300 flex items-center gap-2 transition-all cursor-pointer font-mono"
           >

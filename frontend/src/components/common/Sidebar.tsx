@@ -4,7 +4,6 @@ import type { NavTab } from '../../context/CommandContext';
 import { motion } from 'framer-motion';
 import {
   LayoutDashboard,
-  MapPin,
   Stethoscope,
   Ambulance,
   Dna,
@@ -15,7 +14,6 @@ import {
   UserCheck,
   Brain,
   ArrowRightLeft,
-  Sparkles,
   BarChart3,
   Settings,
   HelpCircle,
@@ -34,13 +32,11 @@ export const Sidebar: React.FC = () => {
     { id: 'redistribution', label: 'AI Resource Transfer', icon: ArrowRightLeft, badge: '4 AI Recs' },
     { id: 'forecasting', label: 'AI Predictive Engine', icon: Brain, badge: '98.8% Acc' },
     { id: 'patients', label: 'Patient EHR & Triage', icon: Users, badge: '98% Acc' },
-    { id: 'outbreaks', label: 'Outbreak Intelligence', icon: MapPin, badge: 'R0 1.84' },
     { id: 'triage', label: 'AI Diagnostic Triage', icon: Stethoscope },
     { id: 'logistics', label: 'Tele-ICU & Fleet', icon: Ambulance, badge: 'Live GPS' },
     { id: 'inventory', label: 'Medicine & Supplies', icon: Pill, badge: '94.2% Stock' },
     { id: 'workforce', label: 'Medical Workforce', icon: UserCheck, badge: '97.1% Active' },
     { id: 'analytics', label: 'Executive Analytics', icon: BarChart3, badge: 'Executive' },
-    { id: 'copilot', label: 'ArogyaAI Copilot', icon: Sparkles, badge: 'Gemini Pro' },
     { id: 'genomics', label: 'Genomic Surveillance', icon: Dna },
     { id: 'nodes', label: 'Hospital Telemetry', icon: Building2, badge: '5 Apex' },
     { id: 'settings', label: 'System Settings', icon: Settings, badge: 'Security' }

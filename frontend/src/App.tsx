@@ -3,7 +3,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import { CommandProvider, useCommand } from './context/CommandContext';
 import { Navbar } from './components/common/Navbar';
 import { Sidebar } from './components/common/Sidebar';
-import { ArogyaCopilot } from './components/copilot/ArogyaCopilot';
+
 import { ContainmentModal } from './components/common/ContainmentModal';
 import { ExecutiveReportModal } from './components/report/ExecutiveReportModal';
 import { CinematicIntro } from './components/intro/CinematicIntro';
@@ -12,7 +12,6 @@ import { VoiceCommandHUD } from './components/voice/VoiceCommandHUD';
 import { ThemeWaveRipple } from './components/theme/ThemeWaveRipple';
 import { ThemeStudioModal } from './components/theme/ThemeStudioModal';
 import { OverviewPage } from './pages/OverviewPage';
-import { OutbreakSurveillancePage } from './pages/OutbreakSurveillancePage';
 import { DiagnosticTriagePage } from './pages/DiagnosticTriagePage';
 import { TeleIcuLogisticsPage } from './pages/TeleIcuLogisticsPage';
 import { GenomicSurveillancePage } from './pages/GenomicSurveillancePage';
@@ -22,7 +21,6 @@ import { PatientManagementPage } from './pages/PatientManagementPage';
 import { WorkforceManagementPage } from './pages/WorkforceManagementPage';
 import { PredictiveForecastingPage } from './pages/PredictiveForecastingPage';
 import { ResourceRedistributionPage } from './pages/ResourceRedistributionPage';
-import { AIAssistantPage } from './pages/AIAssistantPage';
 import { ExecutiveAnalyticsPage } from './pages/ExecutiveAnalyticsPage';
 import { EnterpriseSettingsPage } from './pages/EnterpriseSettingsPage';
 import { DistrictDigitalTwin } from './components/digitaltwin/DistrictDigitalTwin';
@@ -41,11 +39,10 @@ const MainContent: React.FC = () => {
         {activeTab === 'digitaltwin' && <DistrictDigitalTwin key="digitaltwin" />}
         {activeTab === 'settings' && <EnterpriseSettingsPage key="settings" />}
         {activeTab === 'analytics' && <ExecutiveAnalyticsPage key="analytics" />}
-        {activeTab === 'copilot' && <AIAssistantPage key="copilot" />}
+
         {activeTab === 'redistribution' && <ResourceRedistributionPage key="redistribution" />}
         {activeTab === 'forecasting' && <PredictiveForecastingPage key="forecasting" />}
         {activeTab === 'patients' && <PatientManagementPage key="patients" />}
-        {activeTab === 'outbreaks' && <OutbreakSurveillancePage key="outbreaks" />}
         {activeTab === 'triage' && <DiagnosticTriagePage key="triage" />}
         {activeTab === 'logistics' && <TeleIcuLogisticsPage key="logistics" />}
         {activeTab === 'inventory' && <MedicineInventoryPage key="inventory" />}
@@ -72,7 +69,7 @@ export const DashboardLayout: React.FC = () => {
         <MainContent />
       </div>
 
-      <ArogyaCopilot />
+
       <ContainmentModal />
       <ExecutiveReportModal />
       <WhatIfSimulatorModal />

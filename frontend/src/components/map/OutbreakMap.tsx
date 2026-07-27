@@ -112,9 +112,9 @@ export const OutbreakMap: React.FC = () => {
         subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
       });
     } else if (mapMode === 'carto') {
-      newTileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      newTileLayer = L.tileLayer('https://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
         maxZoom: 18,
-        subdomains: ['a', 'b', 'c', 'd']
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
       });
     } else {
       newTileLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -283,7 +283,7 @@ export const OutbreakMap: React.FC = () => {
                     )}
                   >
                     <Layers className="w-3.5 h-3.5 text-teal-300" />
-                    <span>CARTO Dark</span>
+                    <span>Satellite Hybrid</span>
                   </button>
 
                   <button
@@ -365,7 +365,7 @@ export const OutbreakMap: React.FC = () => {
           <div className="relative z-30 flex flex-col sm:flex-row items-start sm:items-center justify-between text-[11px] font-mono text-slate-300 border-t border-slate-800/90 pt-3 mt-3 gap-1 bg-slate-950/80 px-3 py-2 rounded-xl backdrop-blur-md">
             <span className="flex items-center gap-1.5 text-teal-300 font-bold">
               <Compass className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Google Maps Mouse Drag: {mapMode === 'google' ? 'Google Maps India High-Definition' : mapMode === 'carto' ? 'CARTO Dark Vector' : 'OpenStreetMap'}</span>
+              <span>Google Maps Mouse Drag: {mapMode === 'google' ? 'Google Maps India High-Definition' : mapMode === 'carto' ? 'Google Satellite Hybrid' : 'OpenStreetMap'}</span>
             </span>
 
             <span className="text-[11px] text-slate-300 font-mono flex items-center gap-1">

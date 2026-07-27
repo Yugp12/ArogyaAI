@@ -1,37 +1,28 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useCommand } from '../context/CommandContext';
-import { useTheme } from '../context/ThemeContext';
 import {
   Settings,
   User,
   Bell,
   ShieldCheck,
   Users,
-  Palette,
-  Globe,
-  Key,
   FileCode,
   Laptop,
-  Save,
-  Copy,
-  Moon,
-  Sun
+  Save
 } from 'lucide-react';
 import { clsx } from 'clsx';
 
-type SettingTab = 'profile' | 'notifications' | 'security' | 'roles' | 'theme' | 'language' | 'api' | 'audit' | 'devices';
+type SettingTab = 'profile' | 'notifications' | 'security' | 'roles' | 'audit' | 'devices';
 
 export const EnterpriseSettingsPage: React.FC = () => {
   const { addNotification } = useCommand();
-  const { theme, toggleTheme } = useTheme();
 
   const [activeSubTab, setActiveSubTab] = useState<SettingTab>('profile');
   const [userName, setUserName] = useState('Dr. Arisudan Sengupta');
   const [userTitle, setUserTitle] = useState('National Director of Epidemic Surveillance');
   const [email, setEmail] = useState('a.sengupta@mohfw.gov.in');
   const [phone, setPhone] = useState('+91 98765-43210');
-  const [apiKey] = useState('ag_live_9941_x820_k2991_mohfw');
 
   const [smsAlerts, setSmsAlerts] = useState(true);
   const [whatsappAlerts, setWhatsappAlerts] = useState(true);
@@ -43,9 +34,6 @@ export const EnterpriseSettingsPage: React.FC = () => {
     { id: 'notifications', label: 'Emergency Alerts', icon: Bell },
     { id: 'security', label: 'Security & 2FA', icon: ShieldCheck },
     { id: 'roles', label: 'Roles & RBAC', icon: Users },
-    { id: 'theme', label: 'Theme & Styling', icon: Palette },
-    { id: 'language', label: 'Language & Region', icon: Globe },
-    { id: 'api', label: 'API Keys & Webhooks', icon: Key },
     { id: 'audit', label: 'System Audit Logs', icon: FileCode },
     { id: 'devices', label: 'Connected Devices', icon: Laptop }
   ];
@@ -262,70 +250,6 @@ export const EnterpriseSettingsPage: React.FC = () => {
                     <div className="text-[10px] text-slate-400">EHR Access, Patient Triage & High-Flow Oxygen Controls</div>
                   </div>
                   <span className="px-2 py-0.5 rounded text-[9px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">LEVEL 4 CLINICAL</span>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {activeSubTab === 'theme' && (
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-slate-100 light:text-slate-900 flex items-center gap-2">
-                <Palette className="w-4 h-4 text-teal-400" /> Theme & Interface Appearance
-              </h3>
-
-              <div className="p-4 rounded-xl bg-slate-950/60 light:bg-slate-100 border border-slate-800 flex items-center justify-between font-mono">
-                <div>
-                  <div className="font-bold text-slate-100 light:text-slate-900 font-sans">Command Center Theme</div>
-                  <div className="text-[10px] text-slate-400">Currently: {theme === 'dark' ? 'Dark Sci-Fi Mode' : 'Enterprise Light Mode'}</div>
-                </div>
-
-                <button
-                  onClick={toggleTheme}
-                  className="px-4 py-2 rounded-xl bg-teal-500/20 text-teal-300 hover:bg-teal-500/30 border border-teal-500/30 font-bold flex items-center gap-2 cursor-pointer"
-                >
-                  {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-cyan-400" />}
-                  <span>Toggle Theme</span>
-                </button>
-              </div>
-            </div>
-          )}
-
-          {activeSubTab === 'language' && (
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-slate-100 light:text-slate-900 flex items-center gap-2">
-                <Globe className="w-4 h-4 text-teal-400" /> Language & Regional Localization
-              </h3>
-
-              <div className="space-y-2">
-                <label className="text-slate-300 light:text-slate-700 font-semibold">Primary Interface Language</label>
-                <select className="w-full px-3.5 py-2.5 bg-slate-950 light:bg-slate-100 border border-slate-800 rounded-xl text-slate-100 light:text-slate-900 focus:outline-none focus:border-teal-500">
-                  <option>English (India / International)</option>
-                  <option>Hindi (हिंदी)</option>
-                  <option>Tamil (தமிழ்)</option>
-                  <option>Malayalam (മലയാളം)</option>
-                  <option>Bengali (বাংলা)</option>
-                  <option>Marathi (मराठी)</option>
-                </select>
-              </div>
-            </div>
-          )}
-
-          {activeSubTab === 'api' && (
-            <div className="space-y-4">
-              <h3 className="text-base font-bold text-slate-100 light:text-slate-900 flex items-center gap-2">
-                <Key className="w-4 h-4 text-teal-400" /> Production API Keys & Webhooks
-              </h3>
-
-              <div className="p-3.5 rounded-xl bg-slate-950/60 border border-slate-800 font-mono space-y-2">
-                <div className="text-[10px] text-slate-400">PRODUCTION LIVE API KEY</div>
-                <div className="flex items-center justify-between text-teal-300 font-bold">
-                  <span>{apiKey}</span>
-                  <button
-                    onClick={() => addNotification('COPIED: Production API key copied to clipboard.')}
-                    className="p-1.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300"
-                  >
-                    <Copy className="w-3.5 h-3.5" />
-                  </button>
                 </div>
               </div>
             </div>
